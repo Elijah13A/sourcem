@@ -824,18 +824,35 @@ const addDataToHTMLMovie = (series, keenSlider) => {
             col.classList.add("col-md-2", "movie-hover");
 
             col.innerHTML = `
-<div class="col-md-3 movie-hover" style="    display: flex;
-            align-items: center;
-            justify-content: center;">
-                    <a href="download/imdex.html?id=${serie.id}">
-                        <img src="https://api.dramoir.com/${serie.image}">
-                      <div class="shiny-circle">
-        <div class="sharp-triangle"></div>
-    </div>
-                    </a>
+ <div class="col-md-3 movie-hover" style="    display: flex;
+    align-items: center;
+    justify-content: center;">
+        <a href="download/imdex.html?id=${serie.id}"  style="display: flex;justify-content: center;" >
+            <img src="https://api.dramoir.com/${serie.image}">
+            <div class="shiny-circle">
+                <div class="sharp-triangle"></div>
+            </div>
+            <div class="serie-id1" style="position:absolute; background-color:rgb(255,0,0,.5);border-radius:10px; ;top:65%; width:150%; display:flex;justify-content: center;" >
+            <div class="co1" >
+                <div style="color:white; font-size:15px" class="sp1">
+                    ${serie.title}
                 </div>
+            </div>
+            </div>
+        </a>
+    </div>
             `;
+            const titleElement = col.querySelector('.serie-id1');
+            const movieTitle = col.querySelector(".co1");
+            const movieTitlesp = col.querySelector(".sp1");
+            if (serie.title.length >7) {
+                titleElement.classList.add('text-container1');
+                movieTitle.classList.add("serie-title1");
+                movieTitlesp.classList.add("horizontal-scrolling-items__item1");
+            }
             row.appendChild(col);
+           
+        
         }
         container.appendChild(row);
     }
@@ -882,23 +899,52 @@ const addDataToHTMLPhone = (series, keenSlider) => {
 
         slideItem.innerHTML = `
             <div class="col-md-3 movie-hover" id="first-half" style="display: flex; align-items: center; justify-content: center;">
-                <a href="download/imdex.html?id=${topSerie.id}">
+                <a href="download/imdex.html?id=${topSerie.id}" style="display: flex; justify-content: center;">
                     <img src="https://api.dramoir.com/${topSerie.image}">
                     <div class="shiny-circle">
                         <div class="sharp-triangle"></div>
                     </div>
+                     <div class="serie-id2" style="position:absolute; background-color:rgb(255,0,0,.5);border-radius:10px; ;top:65%; width:60%; display:flex;justify-content: center;" >
+            <div class="co2" >
+                <div style="color:white; font-size:15px" class="sp2">
+                    ${topSerie.title}
+                </div>
+            </div>
+            </div>
                 </a>
             </div>
             <div class="col-md-3 movie-hover" id="second-half" style="display: flex; align-items: center; justify-content: center;">
-                <a href="download/imdex.html?id=${bottomSerie.id}">
+                <a href="download/imdex.html?id=${bottomSerie.id}" style="display: flex; justify-content: center;">
                     <img src="https://api.dramoir.com/${bottomSerie.image}">
                     <div class="shiny-circle">
                         <div class="sharp-triangle"></div>
                     </div>
+                     <div class="serie-id3" style="position:absolute; background-color:rgb(255,0,0,.5);border-radius:10px; ;top:65%; width:60%; display:flex;justify-content: center;" >
+            <div class="co3" >
+                <div style="color:white; font-size:15px" class="sp3">
+                    ${bottomSerie.title}
+                </div>
+            </div>
+            </div>
                 </a>
             </div>
         `;
-
+        const titleElement = slideItem.querySelector('.serie-id2');
+        const movieTitle = slideItem.querySelector(".co2");
+        const movieTitlesp = slideItem.querySelector(".sp2");
+        if (topSerie.title.length >7) {
+            titleElement.classList.add('text-container1');
+            movieTitle.classList.add("serie-title1");
+            movieTitlesp.classList.add("horizontal-scrolling-items__item1");
+        }
+        const titleElement1 = slideItem.querySelector('.serie-id3');
+        const movieTitle1 = slideItem.querySelector(".co3");
+        const movieTitlesp1 = slideItem.querySelector(".sp3");
+        if (bottomSerie.title.length >7) {
+            titleElement1.classList.add('text-container1');
+            movieTitle1.classList.add("serie-title1");
+            movieTitlesp1.classList.add("horizontal-scrolling-items__item1");
+        }
         keenSlider.appendChild(slideItem);
     }
 };

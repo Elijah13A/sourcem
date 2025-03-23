@@ -1081,3 +1081,28 @@ display: block;
       display: inline-block;
     }
 }
+@keyframes infiniteScroll1 {
+   0% {
+         -webkit-transform: translateX(-100%);
+         transform: translateX(-100%);
+       }
+ 100%{
+   -webkit-transform: translateX(+100%);
+   transform: translateX(+100%)
+ }
+    }
+    .text-container1 {
+      width: 100%;
+      overflow-x: hidden;
+      
+    }
+    .serie-title1 {
+      display: flex;
+      font-size: 40px;
+      width: 100%;
+      animation: infiniteScroll1 5s  infinite linear;
+    }
+    .horizontal-scrolling-items__item1 {
+      white-space: nowrap;
+      display: inline-block;
+    }
