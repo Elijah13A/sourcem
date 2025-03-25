@@ -655,7 +655,7 @@ const addDataToHTML = (series, keenSlider) => {
         const titleElement = slideItem.querySelector('.serie-id');
         const movieTitle = slideItem.querySelector(".co");
         const movieTitlesp = slideItem.querySelector(".sp");
-        if (serie.title.length > 11) {
+        if (serie.title.length > 9) {
             titleElement.classList.add('text-container');
             movieTitle.classList.add("serie-title");
             movieTitlesp.classList.add("horizontal-scrolling-items__item");
