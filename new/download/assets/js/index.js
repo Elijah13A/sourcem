@@ -79,7 +79,7 @@ const addDataToHTMLMovie = (data, parts) => {
         li.className = "col-12 quality set-center";
         li.id = `quality${index + 1}`;
         li.innerHTML = `
-            <a href="${item.download_url}" class="myimpcolor">
+            <a href="tg://${item.download_url}" class="myimpcolor">
                 ${item.quality}
                 <i class="fa-solid fa-download dark-purple"></i>
             </a>
