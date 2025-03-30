@@ -1,0 +1,110 @@
+:root {
+   --light-purple: rgb(252, 237, 237);
+   --slider-purple: #9775df75;
+   --btn-purple: rgb(150, 0, 255);
+   --mid-green: rgb(96, 244, 244);
+   --dark-green: rgb(5, 126, 126);
+   --light-green: rgb(229, 253, 249);
+   --ld-text: #f8f4f3;
+   --dd-text: black;
+   --header-color: #e2574e;
+   --set-filter: invert(100%);
+   --text-background: rgb(246, 215, 210);
+   --even-q: #f6d9f8;
+   --odd-q: #9775df75;
+   --image-invert: invert(0);
+   --download-box: white;
+   --q-y: #d2f2ff;
+   --drop-down: rgb(246, 215, 210);
+   --f-d: brightness(1);
+}
+
+.darkmode {
+   --light-purple: rgb(7, 0, 16);
+   --ld-text: black;
+   --dd-text: #f8f4f3;
+   --header-color: #a60a2b;
+   --set-filter: invert(100%);
+   --btn-purple: rgb(255, 150, 0);
+   --text-background: rgb(19, 23, 34);
+   --even-q: #273142;
+   --odd-q: #273142;
+   --q-y: rgb(255, 150, 0);
+   --image-invert: invert(100%);
+   --drop-down: #273142;
+   --download-box: rgb(19, 23, 34);
+   --f-d: grayscale(1) brightness(10);
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   text-decoration: none;
+   box-sizing: border-box;
+}
+
+@font-face {
+   font-family: "Shabnam";
+   src: url("../fonts/Shabnam.woff2") format("woff2"),
+      url("../fonts/Shabnam.woff") format("woff"),
+      url("../fonts/Shabnam.ttf") format("truetype");
+}
+
+body {
+   padding: 0;
+   font-family: "Shabnam";
+   transition: all .7s ease-in-out;
+   background-color: var(--light-purple) !important;
+   overflow-x: hidden;
+}
+
+
+
+.invert-color {
+   filter: var(--image-invert) !important;
+}
+
+
+.poster{
+   width: 100%;
+  
+}
+
+.date {
+   font-size: 12px;
+   background-color: var(--text-background);
+  margin: 0 2px;
+  padding: 5px;
+  border-radius: 4px;
+}
+.week{
+   background-color: var(--text-background);
+
+   padding: 5px;
+   margin: 0 4px;
+   border-radius: 5px;
+   display: flex;
+   justify-content: center;
+}
+
+
+.date {
+  display: flex; 
+  padding: auto;  
+  justify-content: center;
+}
+
+.poster-box{
+   position: relative;
+}
+.my-shadow {
+  position: absolute;
+width: 100%;
+bottom: 0;
+height: 100%;
+
+  
+   box-shadow:inset 10px -50px 40px  rgba(0, 0, 0, 0.818); 
+   
+}

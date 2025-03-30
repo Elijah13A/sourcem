@@ -31,6 +31,15 @@
     right: 250px;
     top:150px ;
 }
+.brsc-btn{
+    font-size: 17px;
+}
+.table{
+    font-size: 27px;
+}
+.table-w{
+    width: 190px;
+}
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -67,6 +76,15 @@
     .detail button{
         right:250px ;
         top:150px ;
+    }
+    .brsc-btn{
+        font-size: 15px;
+    }
+    .table{
+        font-size: 25px;
+    }
+    .table-w{
+        width: 170px;
     }
 }
 
@@ -106,6 +124,15 @@
         right: 200px;
         top:100px ;
     } 
+    .brsc-btn{
+        font-size: 15px;
+    }
+    .table{
+        font-size: 22px;
+    }
+    .table-w{
+        width: 140px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -145,10 +172,14 @@
         right:100px ;
         top:140px ;
     }
-    .mj-10{
-        
+    .brsc-btn{
+        font-size: 12px;
     }
-    .movie-title{
-       
+    .table{
+        font-size: 20px;
     }
+    .table-w{
+        width: 90px;
+    }
+  
 }
