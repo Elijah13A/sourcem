@@ -135,7 +135,7 @@ height: 100%;
    display: none;
    padding: 20px;
    margin-top: 15px;
-   background-color: var(--day-content);
+   
    border-radius: 5px;
   
 }
@@ -156,7 +156,7 @@ height: 100%;
 }
 
 .content-container{
-   width: 80%;
+   width: 85%;
 }
 
 .colors{
@@ -177,8 +177,9 @@ height: 100%;
    right: 20px;
 }
 
-.movie-border{
-   border-bottom:.1px solid var(--active-day);
-margin-top: 20px;
-padding-bottom: 20px;
+.bg{
+   background-color: var(--day-content);
+   margin: 0 2px !important;
+   padding: 0 !important;
+   border-radius: 10px;
 }

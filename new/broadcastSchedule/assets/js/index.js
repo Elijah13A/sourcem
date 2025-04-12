@@ -69,13 +69,14 @@ const addDataToHTML = (schedules, dayElement) => {
 
     schedules.forEach(schedule => {
         const scheduleElement = document.createElement("div");
-        scheduleElement.className = "schedule-item mb-4 col-md-6 col-12";
+        scheduleElement.className = "schedule-item mb-4 col-md-6 col-12 ";
 
         scheduleElement.innerHTML = `
         
-            <a href="../downloadSerie/imdex.html?id=${schedule.id}" class="link row movie-border">
+            <a href="../downloadSerie/imdex.html?id=${schedule.id}" class="link  ">
+            <div class="row bg py-2 px-0">
                 <div class="col-4">
-                    <img src="${schedule.series_image}" class="rounded-3 w-100" style="max-width:180px" />
+                    <img src="${schedule.series_image}" class="rounded-3 w-100" style="max-width:150px" />
                 </div>
                 <div class="col-8 pt-md-2 pt-0 colors">
                     <div class="pb-md-5 pb-2">
@@ -85,7 +86,7 @@ const addDataToHTML = (schedules, dayElement) => {
                         <span style="font-size:13px">${schedule.notes}</span>
                     </div>
                 </div>
-                
+                </div>
             </a>
         `;
 
