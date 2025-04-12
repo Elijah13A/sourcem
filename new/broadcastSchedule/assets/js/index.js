@@ -72,8 +72,8 @@ const addDataToHTML = (schedules, dayElement) => {
         scheduleElement.className = "schedule-item mb-4 col-md-6 col-12";
 
         scheduleElement.innerHTML = `
-        <div class="">
-            <a href="../downloadSerie/imdex.html?id=${schedule.id}" class="link row">
+        
+            <a href="../downloadSerie/imdex.html?id=${schedule.id}" class="link row movie-border">
                 <div class="col-4">
                     <img src="${schedule.series_image}" class="rounded-3 w-100" style="max-width:180px" />
                 </div>
@@ -85,7 +85,7 @@ const addDataToHTML = (schedules, dayElement) => {
                         <span style="font-size:13px">${schedule.notes}</span>
                     </div>
                 </div>
-                </div>
+                
             </a>
         `;
 
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchSchedules("https://api.dramoir.com/main/weeklist/?format=json").then(() => {
         // Then setup day switching
         setupDaySwitcher(todayPersianDay);
-    });
+    }); 
 });
 
 function setupDaySwitcher(todayPersianDay) {
