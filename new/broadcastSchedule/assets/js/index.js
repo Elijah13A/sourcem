@@ -38,7 +38,7 @@ const fetchSchedules = async (apiUrl) => {
 
         for (const [dayKey, dayInfo] of Object.entries(daysMapping)) {
             if (data[dayKey]) {
-               sion
+               
                 addDataToHTML(data[dayKey].schedules, document.querySelector(dayInfo.element));
 
                
@@ -93,7 +93,7 @@ const addDataToHTML = (schedules, dayElement) => {
         row.appendChild(scheduleElement);
     });
 }
-// Initialize
+
 document.addEventListener('DOMContentLoaded', function () {
     const daysOfWeek = ['شنبه', 'یکشنبه', 'دوشنبه', 'سه شنبه', 'چهارشنبه', 'پنجشنبه', 'جمعه'];
     const today = new Date();
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     fetchSchedules("https://api.dramoir.com/main/weeklist/?format=json").then(() => {
-        ng
+        
         setupDaySwitcher(todayPersianDay);
     }); 
 });
