@@ -896,7 +896,7 @@ const addDataToHTMLPhone = (series, keenSlider) => {
 
         const slideItem = document.createElement("swiper-slide");
 
-
+console.log("hello lovely")
         slideItem.innerHTML = `
             <div class="col-md-3 movie-hover" id="first-half" style="display: flex; align-items: center; justify-content: center;">
                 <a href="download/imdex.html?id=${topSerie.id}" style="display: flex; justify-content: center;">

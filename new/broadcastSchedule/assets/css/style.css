@@ -17,6 +17,8 @@
    --q-y: #d2f2ff;
    --drop-down: rgb(246, 215, 210);
    --f-d: brightness(1);
+   --active-day:#c2bdf1;
+   --day-content:white;
 }
 
 .darkmode {
@@ -26,7 +28,7 @@
    --header-color: #a60a2b;
    --set-filter: invert(100%);
    --btn-purple: rgb(255, 150, 0);
-   --text-background: rgb(19, 23, 34);
+   --text-background: #273142;
    --even-q: #273142;
    --odd-q: #273142;
    --q-y: rgb(255, 150, 0);
@@ -34,6 +36,8 @@
    --drop-down: #273142;
    --download-box: rgb(19, 23, 34);
    --f-d: grayscale(1) brightness(10);
+   --active-day:rgb(255, 150, 0);
+   --day-content:#273142;
 }
 
 * {
@@ -107,4 +111,68 @@ height: 100%;
   
    box-shadow:inset 10px -50px 40px  rgba(0, 0, 0, 0.818); 
    
+}
+
+.today{
+   background-color:var(--active-day) !important;
+   
+}
+
+.date span{
+   color: var(--dd-text);
+}
+.week {
+   cursor: pointer;
+   padding: 10px;
+   text-align: center;
+}
+
+.week span{
+   color: var(--dd-text);
+}
+
+.day-content {
+   display: none;
+   padding: 20px;
+   margin-top: 15px;
+   background-color: var(--day-content);
+   border-radius: 5px;
+  
+}
+
+.day-content.show {
+   display: block;
+  
+}
+
+
+.link{
+   text-decoration: none;
+   color: var(--dd-text) !important;
+}
+
+.link:hover{
+   color: var(--dd-text) !important;  
+}
+
+.content-container{
+   width: 80%;
+}
+
+.colors{
+   color: var(--dd-text);
+}
+
+.out ,.out2{
+   position: absolute;
+   z-index: 13;
+   width: 25px;
+   top: 10px;
+   right: 10px;
+   filter: invert(100%);
+}
+
+.out2{
+   top: 10px;
+   right: 20px;
 }
