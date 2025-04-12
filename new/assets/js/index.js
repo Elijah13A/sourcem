@@ -669,59 +669,9 @@ fetchSeries("https://api.dramoir.com/main/home/?format=json");
 
 
 
-//search
-document.querySelector('.search-btn').addEventListener('click', async function () {
-    const inputElement = document.querySelector('input[data-search]');
-    const searchValue = inputElement.value.trim().toLowerCase();
-    const searchMessage = document.getElementById('search-message');
-
-    if (!searchValue) {
-        searchMessage.textContent = 'لطفاً عنوانی را وارد کنید!';
-        searchMessage.style.color = 'red';
-        return;
-    }
-
-    try {
-        const response = await fetch(`https://api.dramoir.com/main/search/?q=${encodeURIComponent(searchValue)}`);
-        if (!response.ok) {
-            throw new Error('خطا در دریافت داده‌ها');
-        }
-        const data = await response.json();
-
-        // بررسی ساختار داده‌ها
-        if (!data.movies || !data.series) {
-            throw new Error('فرمت داده‌ها نادرست است!');
-        }
 
 
-        const foundMovie = data.movies.find(movie => movie.title.toLowerCase().includes(searchValue));
 
-        const foundSerie = data.series.find(serie => serie.title.toLowerCase().includes(searchValue));
-
-        if (foundMovie) {
-
-            window.location.href = `download/imdex.html?id=${foundMovie.id}`;
-            inputElement.value = '';
-        } else if (foundSerie) {
-
-            window.location.href = `downloadSerie/imdex.html?id=${foundSerie.id}`;
-            inputElement.value = '';
-        } else {
-
-            searchMessage.textContent = 'فیلم یا سریالی با این عنوان پیدا نشد!';
-            searchMessage.style.color = 'red';
-            inputElement.value = '';
-        }
-    } catch (error) {
-        console.error('خطا در دریافت داده‌ها:', error);
-        searchMessage.textContent = 'مشکلی در دریافت اطلاعات پیش آمده!';
-        searchMessage.style.color = 'red';
-    }
-});
-
-document.querySelector('.delete-btn').addEventListener('click', function () {
-    document.querySelector('input[data-search]').value = '';
-});
 
 
 // top search

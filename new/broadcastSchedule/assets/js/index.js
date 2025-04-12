@@ -25,7 +25,7 @@ const fetchSchedules = async (apiUrl) => {
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
 
-        // Process each day's data
+        
         const daysMapping = {
             saturday: { element: ".saturday", persianDay: "شنبه" },
             sunday: { element: ".sunday", persianDay: "یکشنبه" },
@@ -38,10 +38,10 @@ const fetchSchedules = async (apiUrl) => {
 
         for (const [dayKey, dayInfo] of Object.entries(daysMapping)) {
             if (data[dayKey]) {
-                // Add to desktop version
+               sion
                 addDataToHTML(data[dayKey].schedules, document.querySelector(dayInfo.element));
 
-                // Add to mobile version (create if doesn't exist)
+               
                 const mobileContent = document.querySelector(`.day-content[data-day="${dayInfo.persianDay}"]`);
                 if (mobileContent) {
                     addDataToHTML(data[dayKey].schedules, mobileContent);
@@ -83,7 +83,7 @@ const addDataToHTML = (schedules, dayElement) => {
                         <span class="fs-md-5 fs-6">${schedule.series_title}</span>
                     </div>
                     <div>
-                        <span style="font-size:13px">${schedule.notes}</span>
+                        <span style="font-size:13px">${schedule.notes.replace(/\r\n/g, '<br>')}</span>
                     </div>
                 </div>
                 </div>
@@ -101,18 +101,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const persianDayIndex = (dayOfWeek + 1) % 7;
     const todayPersianDay = daysOfWeek[persianDayIndex];
 
-    // Fetch data first
+    
     fetchSchedules("https://api.dramoir.com/main/weeklist/?format=json").then(() => {
-        // Then setup day switching
+        ng
         setupDaySwitcher(todayPersianDay);
     }); 
 });
 
 function setupDaySwitcher(todayPersianDay) {
-    // Show today's content initially
+   
     showDayContent(todayPersianDay);
 
-    // Desktop version
+   
     const desktopWeekElements = document.querySelectorAll('.week');
     desktopWeekElements.forEach(week => {
         const dayName = week.querySelector('span').textContent.trim();
@@ -128,7 +128,7 @@ function setupDaySwitcher(todayPersianDay) {
         });
     });
 
-    // Mobile version
+   
     const mobileDateElements = document.querySelectorAll(".date");
     mobileDateElements.forEach(date => {
         const dayName = date.querySelector("span").textContent.trim();
