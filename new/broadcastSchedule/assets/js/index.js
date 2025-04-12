@@ -69,7 +69,7 @@ const addDataToHTML = (schedules, dayElement) => {
 
     schedules.forEach(schedule => {
         const scheduleElement = document.createElement("div");
-        scheduleElement.className = "schedule-item mb-4 col-md-6 col-12 ";
+        scheduleElement.className = "schedule-item mb-2 col-md-6 col-12 ";
 
         scheduleElement.innerHTML = `
         
